@@ -9,6 +9,8 @@
       href="./images/stoppage.png"
       type="image/x-icon"
     />
+
+    <!-- Tailwind CSS and Daisy UI  -->
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css"
       rel="stylesheet"
@@ -54,7 +56,9 @@
             <a class="text-[#030712] text-4xl font-extrabold">E-Ticket</a>
           </div>
           <div class="navbar-center hidden lg:flex">
-            <ul class="menu menu-horizontal px-1  text-[#030712B3] text-lg font-medium">
+            <ul
+              class="menu menu-horizontal px-1 text-[#030712B3] text-lg font-medium"
+            >
               <li><a>Home</a></li>
               <li><a>About</a></li>
               <li><a>Destination</a></li>
@@ -63,14 +67,78 @@
           </div>
           <div class="navbar-end">
             <!-- <a class="btn">Button</a> -->
-            <button class="btn bg-[#1DD1001A] text-[#1DD100] border-[1px] border-[#1DD10066] rounded-xl w-32">
+            <button
+              class="btn bg-[#1DD1001A] text-[#1DD100] border-[1px] border-[#1DD10066] rounded-xl w-32"
+            >
               Bus
-              <img src="./images/bus-icon.png" alt="">
+              <img src="./images/bus-icon.png" alt="" />
             </button>
           </div>
         </div>
       </nav>
+
+      <!-- banner section -->
+      <section>
+        <div class="carousel w-full h-[600px]">
+          <div
+            class="carousel-item relative w-full bg-[linear-gradient(45deg,rgba(0,0,0,0.2),rgba(0,0,0,0.1)),url(./images/banner.png)] bg-center bg-cover rounded-3xl object-cover"
+          >
+            <div class="hero text-white">
+              <div class="hero-content text-center">
+                <div class="">
+                  <h1 class="mb-5 text-5xl font-extrabold text-[#fff] raleway">
+                    End-to-End Travel with <br />
+                    <span class="text-[#1DD100]">E Paribahan</span>
+                  </h1>
+                  <p class="mb-8 text-[#fff] text-lg w-2/3 mx-auto">
+                    Provident cupiditate voluptatem et in. Quaerat fugiat ut
+                    assumenda excepturi exercitationem quasi. In deleniti eaque
+                    aut repudiandae et a id nisi.
+                  </p>
+                    <button class="btn raleway text-lg w-44 h-14 font-bold text-[#030712] bg-[#1DD100]">Buy Tickets</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <section
+          class="py-7 mx-auto -translate-y-32 flex flex-col lg:grid lg:grid-cols-3  gap-6 w-1/2 lg:w-4/5"
+        >
+          <!-- Registered users  -->
+          <div class="flex justify-around bg-white  shadow-md rounded-3xl items-center py-9 lg:py-7 border-b-[3px] border-[#1DD100]">
+            <figure><img src="./images/people.png" alt="people" /></figure>
+            <div>
+                <h1 class="text-[#030712] text-4xl font-bold">500K+</h1>
+                <h2 class="text-lg text-[#03071299]">Registered users</h2>
+            </div>
+          </div>
+
+          <!-- Tickets sold  -->
+           <div class="flex justify-around bg-white  shadow-md rounded-3xl items-center py-9 lg:py-7 border-b-[3px] border-[#1DD100]">
+            <figure><img src="./images/ticket-cupon.png" alt="people" /></figure>
+            <div>
+                <h1 class="text-[#030712] text-4xl font-bold">1.7 lacks</h1>
+                <h2 class="text-lg text-[#03071299]">Tickets sold</h2>
+            </div>
+          </div>
+
+          <!-- Rental partners  -->
+          <div class="flex justify-around bg-white  shadow-md rounded-3xl items-center py-9 lg:py-7 border-b-[3px] border-[#1DD100]">
+            <figure><img src="./images/stoppage.png" alt="people" /></figure>
+            <div>
+                <h1 class="text-[#030712] text-4xl font-bold">80K+</h1>
+                <h2 class="text-lg text-[#03071299]">Rental partners </h2>
+            </div>
+          </div>
+
+        </section>
+      </section>
     </header>
+
+    <!--
+        lg:grid grid-cols-2 lg:grid-cols-3 lg:items-center
+        w-4/5
+     -->
 
     <!-- main section -->
     <main></main>
