@@ -78,7 +78,7 @@
           </div>
         </div>
       </nav>
-      
+
       <!-- banner section -->
       <section>
         <div class="carousel w-full h-[600px]">
@@ -483,10 +483,14 @@
                   <h2>Total Price</h2>
                   <h2>BDT <span id="total-price">0</span></h2>
                 </div>
+                <div class="flex justify-between mb-4 mt-4 text-[#030712 font-medium">
+                  <h2>Discount Price</h2>
+                  <h2>BDT <span id="discount-price">0</span></h2>
+                </div>
 
                 <label class="input input-bordered flex items-center gap-2 relative" id="coupon-field">
-              <input type="text" class="grow"  placeholder="Have any copupon?" id="input-field"/>
-             <button class="bg-[#1DD100] text-white p-3 absolute right-0 rounded-r-xl"  onclick="grandTotalPriceCalculate('grand-total')">Apply</button>
+              <input type="text" class="grow"  placeholder="Have any coupon?" id="input-field"/>
+             <button class="bg-[#1DD100] hover:bg-[#1DD100] text-white p-3 absolute right-0 disabled:bg-gray-400 rounded-r-xl" onclick="grandTotalPriceCalculate('grand-total')" id="apply-btn" disabled>Apply</button>
             </label>
 
             <div class="flex justify-between mb-4 mt-4 text-[#030712 font-medium">
@@ -532,7 +536,7 @@
               </div>
             </div>
           </div>
-              <!--  -->
+
 
             </div>
 
@@ -590,4 +594,5 @@
 
     <script src="./script.js"></script>
   </body>
+
 </html>

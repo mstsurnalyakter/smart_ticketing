@@ -67,15 +67,25 @@ const totalPriceCalculate = (id) => {
 
 const grandTotalPriceCalculate = (id) => {
   let totalPrice = parseFloat(getInnerText("total-price"));
+//   let discountPrice = parseFloat(getInnerText("discount-price"));
   const couponValue = findElementById("input-field").value;
+   let seatNumber = getInnerText("seat-number");
+
+   if (seatNumber >= 4) {
+    findElementById("apply-btn").removeAttribute("disabled");
+   }
 
   if (couponValue) {
     if (couponValue === "NEW15") {
+        findElementById("next-btn").setAttribute("disabled", true);
       const discount = totalPrice * 0.15;
+      updatedInnerText("discount-price",discount);
       updatedInnerText(id, totalPrice - discount);
       findElementById("coupon-field").style.display = "none";
     } else if (couponValue === "Couple 20") {
+        findElementById("next-btn").setAttribute("disabled", true);
       const discount = totalPrice * 0.2;
+       updatedInnerText("discount-price", discount);
       updatedInnerText(id, totalPrice - discount);
       findElementById("coupon-field").style.display = "none";
     } else {
@@ -88,11 +98,21 @@ const grandTotalPriceCalculate = (id) => {
 };
 
 
+// findElementById("input").addEventListener("keyup", (e) => {
+//   const text = e.target.value;
+//   if (text.toLowerCase() === "delete") {
+//     findElementById("btn").removeAttribute("disabled");
+//   } else findElementById("btn").setAttribute("disabled", true);
+// });
+
+
 findElementById("number-input").addEventListener("keyup", (e) => {
   const number = e.target.value;
   if (number) {
     findElementById("next-btn").removeAttribute("disabled");
-  } else findElementById("next-btn").setAttribute("disabled", true);
+  } else{
+     findElementById("next-btn").setAttribute("disabled", true);
+  }
 });
 
 findElementById("continue").addEventListener("click",()=>{
