@@ -12,15 +12,6 @@ const updatedInnerText = (id, value) => {
   findElementById(id).innerText = value;
 };
 
-const addClass = (id, className) => {
-  findElementById(id).classList.add(className);
-};
-
-const removeClass = (id, className) => {
-  findElementById(id).classList.remove(className);
-};
-
-// create new element
 const createNewElement = (value) => {
   const parentElement = findElementById("tbody");
   const tr = document.createElement("tr");
