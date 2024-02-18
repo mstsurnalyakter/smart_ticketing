@@ -35,42 +35,72 @@ const createNewElement = (value) => {
   parentElement.appendChild(tr);
 };
 
+const totalPriceCalculate = (id) => {
+    const price = 550;
+  let totalPrice = parseFloat(getInnerText(id));
+  totalPrice += price;
+  updatedInnerText(id, totalPrice);
+};
+
+const grandTotalPriceCalculate = (id) => {
+  let totalPrice = parseFloat(getInnerText("total-price"));
+ const couponValue = findElementById("input-field").value;
+
+    if (couponValue) {
+         if (couponValue === "NEW15") {
+           const discount = totalPrice * 0.15;
+           updatedInnerText(id, totalPrice - discount);
+           findElementById("coupon-field").style.display = "none";
+         }else if (couponValue === "Couple 20") {
+             const discount = totalPrice * 0.2;
+             updatedInnerText(id, totalPrice - discount);
+                findElementById("coupon-field").style.display = "none";
+         } else {
+           alert("Invalid coupon code.");
+           findElementById("input-field").value = "";
+         }
+    }else{
+         updatedInnerText(id, totalPrice);
+    }
+
+};
+
 for (const kbd of allKbd) {
-    kbd.addEventListener("click",()=>{
-          kbd.disabled = true;
-        const text = kbd.innerText;
-        kbd.style.backgroundColor = "#1DD100";
-        kbd.style.color = "#fff";
-        createNewElement(text)
+  kbd.addEventListener("click", () => {
+    let totalSeat = getInnerText("total-seat");
+        totalSeat--;
+    let seatNumber = getInnerText("seat-number");
+        seatNumber++;
 
-        let totalSeat = getInnerText("total-seat");
-            totalSeat--;
-            updatedInnerText("total-seat",totalSeat)
-        let seatNumber = getInnerText("seat-number");
-            seatNumber++;
-            updatedInnerText("seat-number",seatNumber);
+    if (seatNumber >= 5) {
+      alert("Sorry. A person can buy maximum  4 tickets.");
+      return;
+    }
+
+    kbd.disabled = true;
+    const text = kbd.innerText;
+    kbd.style.backgroundColor = "#1DD100";
+    kbd.style.color = "#fff";
+    createNewElement(text);
+    updatedInnerText("total-seat", totalSeat);
+    updatedInnerText("seat-number", seatNumber);
+
+    totalPriceCalculate("total-price");
+    grandTotalPriceCalculate("grand-total");
+  });
 
 
 
-
-    })
 }
-
-
 
 findElementById("buy-tickets").addEventListener("click", () => {
   findElementById("e-paribahan").scrollIntoView({ behavior: "smooth" });
 });
 
-// const btnClick = (btnId) => {
-//   const btn = findElementById(btnId);
-//   const text = getInnerText(btnId);
 
-//    btn.disabled = true;
-//   btn.style.backgroundColor = "#1DD100";
-//   btn.style.color = "#fff";
-// //   btn.disabled = true;
-// //   btn.setAttribute("disabled",true);
-
-//   createNewElement(text);
-// };
+findElementById("number-input").addEventListener("keyup", (e) => {
+  const number = e.target.value;
+  if (number) {
+    findElementById("next-btn").removeAttribute("disabled");
+  } else findElementById("next-btn").setAttribute("disabled", true);
+});

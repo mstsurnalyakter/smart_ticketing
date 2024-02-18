@@ -480,17 +480,17 @@
 
                 <div class="flex justify-between mb-4 mt-4 text-[#030712 font-medium">
                   <h2>Total Price</h2>
-                  <h2>BDT <span>0</span></h2>
+                  <h2>BDT <span id="total-price">0</span></h2>
                 </div>
 
-                <label class="input input-bordered flex items-center gap-2 relative">
-              <input type="text" class="grow"  placeholder="Have any copupon?" />
-             <button class="bg-[#1DD100] text-white p-3 absolute right-0 rounded-r-xl">Optional</button>
+                <label class="input input-bordered flex items-center gap-2 relative" id="coupon-field">
+              <input type="text" class="grow"  placeholder="Have any copupon?" id="input-field"/>
+             <button class="bg-[#1DD100] text-white p-3 absolute right-0 rounded-r-xl"  onclick="grandTotalPriceCalculate('grand-total')">Apply</button>
             </label>
 
             <div class="flex justify-between mb-4 mt-4 text-[#030712 font-medium">
                   <h2>Grand Total</h2>
-                  <h2>BDT <span>0</span></h2>
+                  <h2>BDT <span id="grand-total">0</span></h2>
                 </div>
 
 
@@ -504,8 +504,8 @@
                   <input type="text" id="name" name="name" placeholder="Enter your name" class="input input-bordered focus:input-success input-[#0307121A] w-full" />
                 </section>
                 <section class="flex flex-col mb-6">
-                  <label class="mb-4 text-[#030712] font-semibold text-lg" for="number">Phone Number<span class="text-red-500">*</span></label>
-                  <input type="number" placeholder="Enter your phone number" id="number" name="number" class="input input-bordered input-[#0307121A] focus:input-success w-full" />
+                  <label class="mb-4 text-[#030712] font-semibold text-lg" for="number-input">Phone Number<span class="text-red-500">*</span></label>
+                  <input type="number" placeholder="Enter your phone number" id="number-input" name="number-input" class="input input-bordered input-[#0307121A] focus:input-success w-full" />
                 </section>
                 <section class="flex flex-col mb-6">
                   <label class="mb-4 text-[#030712] font-semibold text-lg" for="email">Email ID</label>
@@ -517,7 +517,7 @@
             <div>
 
                         <!-- The button to open modal -->
-          <a href="#my_modal_8" class="btn bg-[#1DD100] hover:bg-[#24e906] text-white w-full raleway font-extrabold text-xl">Next</a>
+          <a href="#my_modal_8" disabled class="btn bg-[#1DD100] hover:bg-[#24e906] text-white w-full  raleway font-extrabold text-xl" id="next-btn">Next</a>
           <div class="modal" role="dialog" id="my_modal_8">
             <div class="modal-box flex flex-col items-center justify-center space-y-8 p-16">
               <div>
