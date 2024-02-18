@@ -20,7 +20,7 @@
 
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="inter">
+  <body class="inter scroll-smooth">
     <!-- header section -->
     <header class="container mx-auto px-6 lg:px-20">
       <nav class="mb-12 mt-12 raleway">
@@ -484,7 +484,7 @@
 
                 <label class="input input-bordered flex items-center gap-2 relative">
               <input type="text" class="grow"  placeholder="Have any copupon?" />
-             <span class="bg-[#1DD100] p-3 absolute right-0 rounded-r-xl">Optional</span>
+             <button class="bg-[#1DD100] text-white p-3 absolute right-0 rounded-r-xl">Optional</button>
             </label>
 
             <div class="flex justify-between mb-4 mt-4 text-[#030712 font-medium">
@@ -494,9 +494,34 @@
 
 
             </div>
-         
+
             <!-- lower -->
-            <div></div>
+            <div>
+              <form action="">
+                <section class="flex flex-col mb-6">
+                  <label for="name" class="mb-4 text-[#030712] font-semibold text-lg">Passenger Name<span class="text-red-500">*</span></label>
+                  <input type="text" id="name" name="name" placeholder="Enter your name" class="input input-bordered focus:input-success input-[#0307121A] w-full" />
+                </section>
+                <section class="flex flex-col mb-6">
+                  <label class="mb-4 text-[#030712] font-semibold text-lg" for="number">Phone Number<span class="text-red-500">*</span></label>
+                  <input type="number" placeholder="Enter your phone number" id="number" name="number" class="input input-bordered input-[#0307121A] focus:input-success w-full" />
+                </section>
+                <section class="flex flex-col mb-6">
+                  <label class="mb-4 text-[#030712] font-semibold text-lg" for="email">Email ID</label>
+                  <input type="email" id="email" name="email"  placeholder="Enter your name" class="input input-bordered input-[#0307121A focus:input-success w-full" />
+                </section>
+              </form>
+            </div>
+
+            <div>
+              <button class="btn bg-[#1DD100] hover:bg-[#24e906] text-white w-full raleway font-extrabold text-xl">Next</button>
+            </div>
+
+            <div class="flex justify-around">
+              <a href="#" class="underline text-[#03071299]">Terms and Conditions</a>
+              <a href="#" class="underline text-[#03071299]">Cancellation Policy</a>
+            </div>
+
           </section>
         </section>
 
