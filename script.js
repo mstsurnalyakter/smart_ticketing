@@ -67,7 +67,6 @@ const totalPriceCalculate = (id) => {
 
 const grandTotalPriceCalculate = (id) => {
   let totalPrice = parseFloat(getInnerText("total-price"));
-//   let discountPrice = parseFloat(getInnerText("discount-price"));
   const couponValue = findElementById("input-field").value;
    let seatNumber = getInnerText("seat-number");
 
