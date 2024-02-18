@@ -35,35 +35,6 @@ const createNewElement = (value) => {
   parentElement.appendChild(tr);
 };
 
-const totalPriceCalculate = (id) => {
-    const price = 550;
-  let totalPrice = parseFloat(getInnerText(id));
-  totalPrice += price;
-  updatedInnerText(id, totalPrice);
-};
-
-const grandTotalPriceCalculate = (id) => {
-  let totalPrice = parseFloat(getInnerText("total-price"));
- const couponValue = findElementById("input-field").value;
-
-    if (couponValue) {
-         if (couponValue === "NEW15") {
-           const discount = totalPrice * 0.15;
-           updatedInnerText(id, totalPrice - discount);
-           findElementById("coupon-field").style.display = "none";
-         }else if (couponValue === "Couple 20") {
-             const discount = totalPrice * 0.2;
-             updatedInnerText(id, totalPrice - discount);
-                findElementById("coupon-field").style.display = "none";
-         } else {
-           alert("Invalid coupon code.");
-           findElementById("input-field").value = "";
-         }
-    }else{
-         updatedInnerText(id, totalPrice);
-    }
-
-};
 
 for (const kbd of allKbd) {
   kbd.addEventListener("click", () => {
@@ -89,8 +60,6 @@ for (const kbd of allKbd) {
     grandTotalPriceCalculate("grand-total");
   });
 
-
-
 }
 
 findElementById("buy-tickets").addEventListener("click", () => {
@@ -98,9 +67,45 @@ findElementById("buy-tickets").addEventListener("click", () => {
 });
 
 
+const totalPriceCalculate = (id) => {
+  const price = 550;
+  let totalPrice = parseFloat(getInnerText(id));
+  totalPrice += price;
+  updatedInnerText(id, totalPrice);
+};
+
+const grandTotalPriceCalculate = (id) => {
+  let totalPrice = parseFloat(getInnerText("total-price"));
+  const couponValue = findElementById("input-field").value;
+
+  if (couponValue) {
+    if (couponValue === "NEW15") {
+      const discount = totalPrice * 0.15;
+      updatedInnerText(id, totalPrice - discount);
+      findElementById("coupon-field").style.display = "none";
+    } else if (couponValue === "Couple 20") {
+      const discount = totalPrice * 0.2;
+      updatedInnerText(id, totalPrice - discount);
+      findElementById("coupon-field").style.display = "none";
+    } else {
+      alert("Invalid coupon code.");
+      findElementById("input-field").value = "";
+    }
+  } else {
+    updatedInnerText(id, totalPrice);
+  }
+};
+
+
 findElementById("number-input").addEventListener("keyup", (e) => {
   const number = e.target.value;
   if (number) {
     findElementById("next-btn").removeAttribute("disabled");
   } else findElementById("next-btn").setAttribute("disabled", true);
+});
+
+findElementById("continue").addEventListener("click",()=>{
+     setTimeout(() => {
+       location.reload();
+     }, 1000);
 });
