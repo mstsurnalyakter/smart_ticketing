@@ -97,14 +97,6 @@ const grandTotalPriceCalculate = (id) => {
 };
 
 
-// findElementById("input").addEventListener("keyup", (e) => {
-//   const text = e.target.value;
-//   if (text.toLowerCase() === "delete") {
-//     findElementById("btn").removeAttribute("disabled");
-//   } else findElementById("btn").setAttribute("disabled", true);
-// });
-
-
 findElementById("number-input").addEventListener("keyup", (e) => {
   const number = e.target.value;
   if (number) {
