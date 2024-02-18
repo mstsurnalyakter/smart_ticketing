@@ -46,6 +46,9 @@ for (const kbd of allKbd) {
         let totalSeat = getInnerText("total-seat");
             totalSeat--;
             updatedInnerText("total-seat",totalSeat)
+        let seatNumber = getInnerText("seat-number");
+            seatNumber++;
+            updatedInnerText("seat-number",seatNumber);
 
 
 
